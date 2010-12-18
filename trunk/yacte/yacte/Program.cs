@@ -17,6 +17,7 @@ namespace yacte
 
 			int numArgs = args.Length;
 			string fileName = "";
+			string oldFileContent = "";
 			string fileContent = "";
 			bool loopMenu = true;
 			if (numArgs <= 0)
@@ -39,8 +40,8 @@ namespace yacte
 				{
                     SR = new StreamReader(fileName);
 					TT.PrintSeparator();
-					fileContent = SR.ReadToEnd();
-					Console.WriteLine("Contents:\n" + fileContent);
+					oldFileContent = SR.ReadToEnd();
+					Console.WriteLine("Contents:\n" + oldFileContent);
 					TT.PrintSeparator();
                     SR.Close();     
 				}
@@ -57,10 +58,9 @@ namespace yacte
 			do
 			{
 				Console.WriteLine("What do you want to write?");
-				//Need to append otherwise the display of the file content will break.
-				fileContent += Console.ReadLine();
+				fileContent = Console.ReadLine();
 				TT.PrintSeparator();
-				Console.WriteLine("New content:\n\n" + fileContent);
+				Console.WriteLine("New content:\n\n" + oldFileContent + fileContent);
 				TT.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/N)");
                 string choice = Console.ReadLine();
@@ -72,8 +72,8 @@ namespace yacte
 						Console.WriteLine("Do you want to overwrite the current file? (Y/N)");
 						string owChoice = Console.ReadLine();
 						owChoice = !string.IsNullOrEmpty(owChoice) ? owChoice.ToUpper() : "N";
-						bool overWrite = owChoice.Equals("N");
-                        SW = new StreamWriter(fileName, overWrite);
+						bool append = owChoice.Equals("N");
+                        SW = new StreamWriter(fileName, append);
 						SW.WriteLine(fileContent);
                         SW.Flush();
                         SW.Close();
