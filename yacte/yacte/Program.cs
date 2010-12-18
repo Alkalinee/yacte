@@ -27,16 +27,16 @@ namespace yacte
 			TextReader SR;
 			if (File.Exists(fileName))
 			{
-				SR = new StreamReader(fileName);
 				try
 				{
+                    SR = new StreamReader(fileName);
 					Console.WriteLine("Contents:\n" + SR.ReadLine());
+                    SR.Close();     
 				}
 				catch (Exception ex)
 				{
 					Console.WriteLine("Error reading file, exception: " + ex.Message + "\n==" + ex.Source + "==");
 				}
-				SR.Close();
 			}
 			else
 			{
