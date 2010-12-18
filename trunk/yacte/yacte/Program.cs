@@ -69,7 +69,7 @@ namespace yacte
 				{
 					try
 					{
-						Console.WriteLine("Do you want to overwrite the current file? (Y/N)");
+						Console.WriteLine("Do you want to overwrite the current file? (y/N)");
 						string owChoice = Console.ReadLine();
 						owChoice = !string.IsNullOrEmpty(owChoice) ? owChoice.ToUpper() : "N";
 						bool append = owChoice.Equals("N");
