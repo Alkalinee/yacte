@@ -22,7 +22,7 @@ namespace yacte
 			get { return CONSOLE_HEIGHT; }
 		}
 
-		public void PrintLine()
+		public void PrintSeperator()
 		{
 			for(int i = 0; i < CONSOLE_WIDTH; i++)
 			{
