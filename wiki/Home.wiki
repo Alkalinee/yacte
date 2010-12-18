@@ -1,5 +1,4 @@
 #summary Yacte Wiki homepage.
-#TODO: Add more stuff
 
 = YACTE Wiki =
 
