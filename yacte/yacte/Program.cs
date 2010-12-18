@@ -6,8 +6,11 @@ namespace yacte
 	internal class Program
 	{
 		private const string authors = "Fuskare01 and Vijfhoek";
+
 		static void Main(string[] args)
 		{
+			TextTool TT = new TextTool();
+
 			//Just making something to test SVN
 			int numArgs = args.Length;
 			string fileName = "";
@@ -30,7 +33,9 @@ namespace yacte
 				try
 				{
                     SR = new StreamReader(fileName);
+					TT.PrintLine();
 					Console.WriteLine("Contents:\n" + SR.ReadLine());
+					TT.PrintLine();
                     SR.Close();     
 				}
 				catch (Exception ex)
@@ -47,7 +52,9 @@ namespace yacte
 			{
 				Console.WriteLine("What do you want to write?");
 				fileContent += Console.ReadLine();
+				TT.PrintLine();
 				Console.WriteLine("New content:\n\n" + fileContent);
+				TT.PrintLine();
 				Console.WriteLine("Do you want to save this? (Y/n)");
 				//TODO: Null-checks
 				string choice = Console.ReadLine().ToUpper();
