@@ -9,6 +9,7 @@ namespace yacte
 		//Constants here, in UPPERCASE
 		private const string _AUTHORS = "Fuskare01 and Vijfhoek";
 		private const double _VERSION = 0.10;
+		private const string _TITLE = "YACTE - Yet Another Console Text Editor";
 		#endregion
 
 		static void Main(string[] args)
@@ -16,8 +17,11 @@ namespace yacte
 			var tt = new TextTool();
 			var comSys = new CommandSystem();
 
+			Console.Title = _TITLE;
+
 			int numArgs = args.Length;
 			string fileName;
+			string fileContent = "";
 			string oldFileContent = "";
 			bool loopMenu = true;
 			if (numArgs <= 0)
@@ -60,7 +64,7 @@ namespace yacte
 			do
 			{
 				Console.WriteLine("What do you want to write?");
-				string fileContent = Console.ReadLine();
+				fileContent += Console.ReadLine();
 				tt.PrintSeparator();
 				Console.WriteLine("New content:\n\n" + oldFileContent + fileContent);
 				tt.PrintSeparator();
