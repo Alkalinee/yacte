@@ -11,7 +11,6 @@ namespace yacte
 		{
 			TextTool TT = new TextTool();
 
-			//Just making something to test SVN
 			int numArgs = args.Length;
 			string fileName = "";
 			string fileContent = "";
