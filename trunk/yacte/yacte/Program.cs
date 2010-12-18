@@ -32,9 +32,9 @@ namespace yacte
 				try
 				{
                     SR = new StreamReader(fileName);
-					TT.PrintLine();
+					TT.PrintSeperator();
 					Console.WriteLine("Contents:\n" + SR.ReadLine());
-					TT.PrintLine();
+					TT.PrintSeperator();
                     SR.Close();     
 				}
 				catch (Exception ex)
@@ -51,9 +51,9 @@ namespace yacte
 			{
 				Console.WriteLine("What do you want to write?");
 				fileContent += Console.ReadLine();
-				TT.PrintLine();
+				TT.PrintSeperator();
 				Console.WriteLine("New content:\n\n" + fileContent);
-				TT.PrintLine();
+				TT.PrintSeperator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
 				//TODO: Null-checks
 				string choice = Console.ReadLine().ToUpper();
