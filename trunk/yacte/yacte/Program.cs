@@ -56,17 +56,17 @@ namespace yacte
 					try
 					{
 						SW.WriteLine(fileContent);
-						Console.WriteLine("Successfully wrote to file!");
-						Console.WriteLine("Do you want to exit? (Y/N)");
-						//TODO: Null-checks
-						string eChoice = Console.ReadLine().ToUpper();
-						if (eChoice == "Y")
-							loopMenu = false;
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
-					}
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
+                    }
+					Console.WriteLine("Successfully wrote to file!");
+					Console.WriteLine("Do you want to exit? (y/N)");
+					//TODO: Null-checks
+					choice = Console.ReadLine().ToUpper();
+					if (choice == "Y")
+						loopMenu = false;
 				}
 			} while (loopMenu);
 			SW.Close();
