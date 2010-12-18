@@ -43,7 +43,7 @@ namespace yacte
         public void PrintSeparator(int width)
         {
 			//Should this be here? What if we want to print a shorter line.
-            if (width <= CONSOLE_WIDTH)
+            if (width <= 0)
             {
                 PrintSeparator();
                 return;
@@ -55,15 +55,13 @@ namespace yacte
 		/// <summary>
 		/// Prints a horizontal line.
 		/// </summary>
-		/// <param name="width">The width of the line.</param>
+		/// <param name="width">The width of the line. (0 for auto-width)</param>
 		/// <param name="separator">The character to use as separator.</param>
 		public void PrintSeparator(int width, char separator)
 		{
-			if (width <= CONSOLE_WIDTH)
-			{
-				PrintSeparator();
-				return;
-			}
+			if (width <= 0)
+				width = CONSOLE_WIDTH;
+
 			for (int i = 0; i < width; i++)
 				Console.Write(separator);
 		}
