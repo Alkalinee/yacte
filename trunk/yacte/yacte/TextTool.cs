@@ -28,7 +28,6 @@ namespace yacte
 			{
 				Console.Write("-");
 			}
-			Console.WriteLine();
 		}
 	}
 }
