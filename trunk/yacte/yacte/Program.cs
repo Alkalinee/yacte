@@ -27,7 +27,7 @@ namespace yacte
 			{
 				fileName = args[1]; //We assume the filename is the first argument.
 			}
-			Console.WriteLine("File: "+fileName);
+			Console.WriteLine("File: " + fileName);
 			TextReader SR;
 			if (File.Exists(fileName))
 			{
@@ -52,10 +52,10 @@ namespace yacte
 				Console.WriteLine("What do you want to write?");
 				fileContent += Console.ReadLine();
 				Console.WriteLine("New content:\n\n" + fileContent);
-				Console.WriteLine("Do you want to save this? (Y/N)");
+				Console.WriteLine("Do you want to save this? (Y/n)");
 				//TODO: Null-checks
 				string choice = Console.ReadLine().ToUpper();
-				if (choice == "Y")
+				if (choice == "Y" || choice == "")
 				{
 					try
 					{
