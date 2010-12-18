@@ -5,13 +5,16 @@ namespace yacte
 {
 	internal class Program
 	{
-		private const string authors = "Fuskare01 and Vijfhoek";
+		#region Constants
+		//Constants here, in UPPERCASE
+		private const string AUTHORS = "Fuskare01 and Vijfhoek";
+		private const double VERSION = 0.10;
+		#endregion
 
 		static void Main(string[] args)
 		{
 			TextTool TT = new TextTool();
 
-			//Just making something to test SVN
 			int numArgs = args.Length;
 			string fileName = "";
 			string fileContent = "";
