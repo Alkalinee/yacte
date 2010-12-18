@@ -40,12 +40,12 @@ namespace yacte
 			{
 				try
 				{
-                    sr = new StreamReader(fileName);
+					sr = new StreamReader(fileName);
 					tt.PrintSeparator();
 					oldFileContent = sr.ReadToEnd();
 					Console.WriteLine("Contents:\n" + oldFileContent);
 					tt.PrintSeparator();
-                    sr.Close();     
+					sr.Close();     
 				}
 				catch (Exception ex)
 				{
@@ -56,7 +56,7 @@ namespace yacte
 			{
 				Console.WriteLine("File does not exist, file will be created when you save.");
 			}
-            TextWriter sw;
+			TextWriter sw;
 			do
 			{
 				Console.WriteLine("What do you want to write?");
@@ -65,9 +65,9 @@ namespace yacte
 				Console.WriteLine("New content:\n\n" + oldFileContent + fileContent);
 				tt.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
-                string choice = Console.ReadLine();
+				string choice = Console.ReadLine();
 				choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
-                if (choice == "" || choice == "Y")
+				if (choice == "" || choice == "Y")
 				{
 					try
 					{
@@ -75,15 +75,15 @@ namespace yacte
 						string owChoice = Console.ReadLine();
 						owChoice = !string.IsNullOrEmpty(owChoice) ? owChoice.ToUpper() : "N";
 						bool append = owChoice.Equals("N");
-                        sw = new StreamWriter(fileName, append);
+						sw = new StreamWriter(fileName, append);
 						sw.WriteLine(fileContent);
-                        sw.Flush();
-                        sw.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
-                    }
+						sw.Flush();
+						sw.Close();
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
+					}
 					Console.WriteLine("Successfully wrote to file!");
 					Console.WriteLine("Do you want to exit? (y/N)");
 					choice = Console.ReadLine();
