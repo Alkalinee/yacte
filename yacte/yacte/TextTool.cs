@@ -29,20 +29,20 @@ namespace yacte
 		}
 
 		/// <summary>
-		/// Prints a horizontal line (----) with a newline.
+		/// Prints a horizontal line.
 		/// </summary>
 		public void PrintSeparator()
 		{
 			for(int i = 0; i < CONSOLE_WIDTH; i++)
 				Console.Write("-");
 		}
-
         /// <summary>
-        /// Prints a horizontal line (----) with a newline.
+        /// Prints a horizontal line.
         /// </summary>
-        /// <param name="width">The amount of "-"s being printed</param>
+        /// <param name="width">The width of the line.</param>
         public void PrintSeparator(int width)
         {
+			//Should this be here? What if we want to print a shorter line.
             if (width <= CONSOLE_WIDTH)
             {
                 PrintSeparator();
@@ -52,6 +52,21 @@ namespace yacte
                 Console.Write("-");
             
         }
+		/// <summary>
+		/// Prints a horizontal line.
+		/// </summary>
+		/// <param name="width">The width of the line.</param>
+		/// <param name="separator">The character to use as separator.</param>
+		public void PrintSeparator(int width, char separator)
+		{
+			if (width <= CONSOLE_WIDTH)
+			{
+				PrintSeparator();
+				return;
+			}
+			for (int i = 0; i < width; i++)
+				Console.Write(separator);
+		}
 
 		/// <summary>
 		/// Replaces a word or string with another string.
