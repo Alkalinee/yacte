@@ -60,7 +60,8 @@ namespace yacte
 				TT.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
                 string choice = Console.ReadLine();
-                if (choice == "" || choice == "Y" || choice == "y")
+				choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
+                if (choice == "" || choice == "Y")
 				{
 					try
 					{
@@ -76,7 +77,8 @@ namespace yacte
 					Console.WriteLine("Successfully wrote to file!");
 					Console.WriteLine("Do you want to exit? (y/N)");
 					choice = Console.ReadLine();
-					if (choice == "Y" || choice == "y")
+					choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
+					if (choice == "Y")
 						loopMenu = false;
 				}
 			} while (loopMenu);
