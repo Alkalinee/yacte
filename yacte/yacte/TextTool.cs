@@ -37,6 +37,22 @@ namespace yacte
 				Console.Write("-");
 		}
 
+        /// <summary>
+        /// Prints a horizontal line (----) with a newline.
+        /// </summary>
+        /// <param name="width">The amount of "-"s being printed</param>
+        public void PrintSeparator(int width)
+        {
+            if (width <= CONSOLE_WIDTH)
+            {
+                PrintSeparator();
+                return;
+            }
+            for (int i = 0; i < width; i++)
+                Console.Write("-");
+            
+        }
+
 		/// <summary>
 		/// Replaces a word or string with another string.
 		/// </summary>
