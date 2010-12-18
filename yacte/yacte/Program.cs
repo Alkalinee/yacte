@@ -17,9 +17,11 @@ namespace yacte
 			bool loopMenu = true;
 			if (numArgs <= 0)
 			{
-				Console.Write("Please specify a file (relative to the exe dir):");
-				//TODO: Null-checks on fileName
-				fileName = Console.ReadLine();
+            EnterFN:
+				Console.Write("Please specify a file (relative to the exe dir): ");
+				fileName = Console.ReadLine().Trim();
+                if (string.IsNullOrEmpty(fileName))
+                    goto EnterFN;
 			}
 			else
 			{
