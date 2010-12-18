@@ -64,7 +64,7 @@ namespace yacte
 				{
 					try
 					{
-                        SW = new StreamWriter(fileName);
+                        SW = new StreamWriter(fileName, true);
 						SW.WriteLine(fileContent);
                         SW.Flush();
                         SW.Close();
