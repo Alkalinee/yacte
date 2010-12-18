@@ -41,7 +41,7 @@ namespace yacte
 		/// <param name="separator">The character to use as separator.</param>
 		public void PrintSeparator(int width, char separator)
 		{
-			if (width <= 0 || width >= CONSOLE_WIDTH /* To prevent it being splitted over 2 lines */)
+			if (width <= 0 || width >= CONSOLE_WIDTH) // To prevent it being splitted over 2 lines
 				width = CONSOLE_WIDTH;
 
 			for (int i = 0; i < width; i++)
