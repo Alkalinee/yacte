@@ -24,24 +24,15 @@ namespace yacte
 		/// </summary>
 		public void PrintSeparator()
 		{
-			for(int i = 0; i < CONSOLE_WIDTH; i++)
-				Console.Write("-");
+			PrintSeparator(0, '-');
 		}
 		/// <summary>
 		/// Prints a horizontal line.
 		/// </summary>
-		/// <param name="width">The width of the line.</param>
-		public void PrintSeparator(int width)
+		/// <param name="separator">The character to use as separator.</param>
+		public void PrintSeparator(char separator)
 		{
-			//Should this be here? What if we want to print a shorter line.
-			if (width <= 0)
-			{
-				PrintSeparator();
-				return;
-			}
-			for (int i = 0; i < width; i++)
-				Console.Write("-");
-			
+			PrintSeparator(0, separator);
 		}
 		/// <summary>
 		/// Prints a horizontal line.
@@ -50,11 +41,14 @@ namespace yacte
 		/// <param name="separator">The character to use as separator.</param>
 		public void PrintSeparator(int width, char separator)
 		{
-			if (width <= 0)
+			if (width <= 0 || width >= CONSOLE_WIDTH /* To prevent it being splitted over 2 lines */)
 				width = CONSOLE_WIDTH;
 
 			for (int i = 0; i < width; i++)
 				Console.Write(separator);
+
+			if (width < CONSOLE_WIDTH)
+				Console.WriteLine();
 		}
 
 		/// <summary>
