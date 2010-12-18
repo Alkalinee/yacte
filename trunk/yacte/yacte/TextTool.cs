@@ -27,22 +27,22 @@ namespace yacte
 			for(int i = 0; i < CONSOLE_WIDTH; i++)
 				Console.Write("-");
 		}
-        /// <summary>
-        /// Prints a horizontal line.
-        /// </summary>
-        /// <param name="width">The width of the line.</param>
-        public void PrintSeparator(int width)
-        {
+		/// <summary>
+		/// Prints a horizontal line.
+		/// </summary>
+		/// <param name="width">The width of the line.</param>
+		public void PrintSeparator(int width)
+		{
 			//Should this be here? What if we want to print a shorter line.
-            if (width <= 0)
-            {
-                PrintSeparator();
-                return;
-            }
-            for (int i = 0; i < width; i++)
-                Console.Write("-");
-            
-        }
+			if (width <= 0)
+			{
+				PrintSeparator();
+				return;
+			}
+			for (int i = 0; i < width; i++)
+				Console.Write("-");
+			
+		}
 		/// <summary>
 		/// Prints a horizontal line.
 		/// </summary>
