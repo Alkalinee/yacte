@@ -57,18 +57,23 @@ namespace yacte
 			do
 			{
 				Console.WriteLine("What do you want to write?");
-				fileContent = Console.ReadLine();
+				//Need to append otherwise the display of the file content will break.
+				fileContent += Console.ReadLine();
 				TT.PrintSeparator();
 				Console.WriteLine("New content:\n\n" + fileContent);
 				TT.PrintSeparator();
-				Console.WriteLine("Do you want to save this? (Y/n)");
+				Console.WriteLine("Do you want to save this? (Y/N)");
                 string choice = Console.ReadLine();
 				choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
                 if (choice == "" || choice == "Y")
 				{
 					try
 					{
-                        SW = new StreamWriter(fileName, true);
+						Console.WriteLine("Do you want to overwrite the current file? (Y/N)");
+						string owChoice = Console.ReadLine();
+						owChoice = !string.IsNullOrEmpty(owChoice) ? owChoice.ToUpper() : "N";
+						bool overWrite = owChoice.Equals("N");
+                        SW = new StreamWriter(fileName, overWrite);
 						SW.WriteLine(fileContent);
                         SW.Flush();
                         SW.Close();
@@ -78,7 +83,7 @@ namespace yacte
                         Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
                     }
 					Console.WriteLine("Successfully wrote to file!");
-					Console.WriteLine("Do you want to exit? (y/N)");
+					Console.WriteLine("Do you want to exit? (Y/N)");
 					choice = Console.ReadLine();
 					choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
 					if (choice == "Y")
