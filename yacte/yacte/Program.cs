@@ -6,8 +6,9 @@ using System.IO;
 
 namespace yacte
 {
-	class Program
+	internal class Program
 	{
+		private const string authors = "Fuskare01 and Vijfhoek";
 		static void Main(string[] args)
 		{
 			//Just making something to test SVN
