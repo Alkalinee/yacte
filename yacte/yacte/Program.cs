@@ -42,7 +42,7 @@ namespace yacte
 			{
 				Console.WriteLine("File does not exist, file will be created when you save.");
 			}
-			TextWriter SW = new StreamWriter(fileName);
+            TextWriter SW;
 			do
 			{
 				Console.WriteLine("What do you want to write?");
@@ -55,7 +55,10 @@ namespace yacte
 				{
 					try
 					{
+                        SW = new StreamWriter(fileName);
 						SW.WriteLine(fileContent);
+                        SW.Flush();
+                        SW.Close();
                     }
                     catch (Exception ex)
                     {
@@ -69,7 +72,6 @@ namespace yacte
 						loopMenu = false;
 				}
 			} while (loopMenu);
-			SW.Close();
 		}
 	}
 }
