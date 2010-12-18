@@ -62,7 +62,7 @@ namespace yacte
 				TT.PrintSeparator();
 				Console.WriteLine("New content:\n\n" + oldFileContent + fileContent);
 				TT.PrintSeparator();
-				Console.WriteLine("Do you want to save this? (Y/N)");
+				Console.WriteLine("Do you want to save this? (Y/n)");
                 string choice = Console.ReadLine();
 				choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
                 if (choice == "" || choice == "Y")
@@ -83,7 +83,7 @@ namespace yacte
                         Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
                     }
 					Console.WriteLine("Successfully wrote to file!");
-					Console.WriteLine("Do you want to exit? (Y/N)");
+					Console.WriteLine("Do you want to exit? (y/N)");
 					choice = Console.ReadLine();
 					choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
 					if (choice == "Y")
