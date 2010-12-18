@@ -7,25 +7,27 @@ namespace yacte
 	{
 		#region Constants
 		//Constants here, in UPPERCASE
-		private const string AUTHORS = "Fuskare01 and Vijfhoek";
-		private const double VERSION = 0.10;
+		private const string _AUTHORS = "Fuskare01 and Vijfhoek";
+		private const double _VERSION = 0.10;
 		#endregion
 
 		static void Main(string[] args)
 		{
-			TextTool TT = new TextTool();
+			var tt = new TextTool();
+			var comSys = new CommandSystem();
 
 			int numArgs = args.Length;
-			string fileName = "";
+			string fileName;
 			string oldFileContent = "";
-			string fileContent = "";
 			bool loopMenu = true;
 			if (numArgs <= 0)
 			{
 				do
 				{
 					Console.Write("Please specify a file (relative to the exe dir): ");
-					fileName = Console.ReadLine().Trim();
+					fileName = Console.ReadLine();
+					if (!string.IsNullOrEmpty(fileName))
+						fileName = fileName.Trim();
 				} while (string.IsNullOrEmpty(fileName));
 			}
 			else
@@ -33,17 +35,17 @@ namespace yacte
 				fileName = args[1]; //We assume the filename is the first argument.
 			}
 			Console.WriteLine("File: " + fileName);
-			TextReader SR;
+			TextReader sr;
 			if (File.Exists(fileName))
 			{
 				try
 				{
-                    SR = new StreamReader(fileName);
-					TT.PrintSeparator();
-					oldFileContent = SR.ReadToEnd();
+                    sr = new StreamReader(fileName);
+					tt.PrintSeparator();
+					oldFileContent = sr.ReadToEnd();
 					Console.WriteLine("Contents:\n" + oldFileContent);
-					TT.PrintSeparator();
-                    SR.Close();     
+					tt.PrintSeparator();
+                    sr.Close();     
 				}
 				catch (Exception ex)
 				{
@@ -54,14 +56,14 @@ namespace yacte
 			{
 				Console.WriteLine("File does not exist, file will be created when you save.");
 			}
-            TextWriter SW;
+            TextWriter sw;
 			do
 			{
 				Console.WriteLine("What do you want to write?");
-				fileContent = Console.ReadLine();
-				TT.PrintSeparator();
+				string fileContent = Console.ReadLine();
+				tt.PrintSeparator();
 				Console.WriteLine("New content:\n\n" + oldFileContent + fileContent);
-				TT.PrintSeparator();
+				tt.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
                 string choice = Console.ReadLine();
 				choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
@@ -73,10 +75,10 @@ namespace yacte
 						string owChoice = Console.ReadLine();
 						owChoice = !string.IsNullOrEmpty(owChoice) ? owChoice.ToUpper() : "N";
 						bool append = owChoice.Equals("N");
-                        SW = new StreamWriter(fileName, append);
-						SW.WriteLine(fileContent);
-                        SW.Flush();
-                        SW.Close();
+                        sw = new StreamWriter(fileName, append);
+						sw.WriteLine(fileContent);
+                        sw.Flush();
+                        sw.Close();
                     }
                     catch (Exception ex)
                     {
