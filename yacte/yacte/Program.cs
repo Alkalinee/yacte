@@ -36,7 +36,8 @@ namespace yacte
 				{
                     SR = new StreamReader(fileName);
 					TT.PrintSeparator();
-					Console.WriteLine("Contents:\n" + SR.ReadLine());
+					fileContent = SR.ReadToEnd();
+					Console.WriteLine("Contents:\n" + fileContent);
 					TT.PrintSeparator();
                     SR.Close();     
 				}
