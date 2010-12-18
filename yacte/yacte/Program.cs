@@ -59,9 +59,8 @@ namespace yacte
 				Console.WriteLine("New content:\n\n" + fileContent);
 				TT.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
-				//TODO: Null-checks
-				string choice = Console.ReadLine().ToUpper();
-				if (choice == "Y" || choice == "")
+                string choice = Console.ReadLine();
+                if (choice == "" || choice.ToUpper() == "Y")
 				{
 					try
 					{
@@ -76,9 +75,8 @@ namespace yacte
                     }
 					Console.WriteLine("Successfully wrote to file!");
 					Console.WriteLine("Do you want to exit? (y/N)");
-					//TODO: Null-checks
-					choice = Console.ReadLine().ToUpper();
-					if (choice == "Y")
+					choice = Console.ReadLine();
+					if (choice == "Y" || choice == "y")
 						loopMenu = false;
 				}
 			} while (loopMenu);
