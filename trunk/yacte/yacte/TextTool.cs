@@ -26,6 +26,7 @@ namespace yacte
 		{
 			PrintSeparator(0, '-');
 		}
+
 		/// <summary>
 		/// Prints a horizontal line.
 		/// </summary>
@@ -34,6 +35,16 @@ namespace yacte
 		{
 			PrintSeparator(0, separator);
 		}
+
+		/// <summary>
+		/// Prints a horizontal line.
+		/// </summary>
+		/// <param name="width">The width of the line.</param>
+		public void PrintSeparator(int width)
+		{
+			PrintSeparator(width, '-');
+		}
+
 		/// <summary>
 		/// Prints a horizontal line.
 		/// </summary>
