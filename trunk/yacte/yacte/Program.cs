@@ -54,7 +54,7 @@ namespace yacte
 			do
 			{
 				Console.WriteLine("What do you want to write?");
-				fileContent += Console.ReadLine();
+				fileContent = Console.ReadLine();
 				TT.PrintSeparator();
 				Console.WriteLine("New content:\n\n" + fileContent);
 				TT.PrintSeparator();
