@@ -38,7 +38,7 @@ namespace yacte
 				}
 				catch (Exception ex)
 				{
-					Console.WriteLine("Error reading file, exception: "+ex.Message+"\n=="+ex.Source+"==");
+					Console.WriteLine("Error reading file, exception: " + ex.Message + "\n==" + ex.Source + "==");
 				}
 				SR.Close();
 			}
