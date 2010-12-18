@@ -1,4 +1,5 @@
-﻿using System;
+﻿//TODO: Clean up this
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace yacte
 			if (numArgs <= 0)
 			{
 				Console.Write("Please specify a file (relative to the exe dir):");
+				//TODO: Null-checks on fileName
 				fileName = Console.ReadLine();
 			}
 			else
@@ -51,6 +53,7 @@ namespace yacte
 				fileContent += Console.ReadLine();
 				Console.WriteLine("New content:\n\n" + fileContent);
 				Console.WriteLine("Do you want to save this? (Y/N)");
+				//TODO: Null-checks
 				string choice = Console.ReadLine().ToUpper();
 				if (choice == "Y")
 				{
@@ -59,6 +62,7 @@ namespace yacte
 						SW.WriteLine(fileContent);
 						Console.WriteLine("Successfully wrote to file!");
 						Console.WriteLine("Do you want to exit? (Y/N)");
+						//TODO: Null-checks
 						string eChoice = Console.ReadLine().ToUpper();
 						if (eChoice == "Y")
 							loopMenu = false;
