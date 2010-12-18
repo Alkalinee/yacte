@@ -11,17 +11,18 @@ namespace yacte
 		{
 			TextTool TT = new TextTool();
 
+			//Just making something to test SVN
 			int numArgs = args.Length;
 			string fileName = "";
 			string fileContent = "";
 			bool loopMenu = true;
 			if (numArgs <= 0)
 			{
-            EnterFN:
-				Console.Write("Please specify a file (relative to the exe dir): ");
-				fileName = Console.ReadLine().Trim();
-                if (string.IsNullOrEmpty(fileName))
-                    goto EnterFN;
+				do
+				{
+					Console.Write("Please specify a file (relative to the exe dir): ");
+					fileName = Console.ReadLine().Trim();
+				} while (string.IsNullOrEmpty(fileName));
 			}
 			else
 			{
@@ -34,9 +35,9 @@ namespace yacte
 				try
 				{
                     SR = new StreamReader(fileName);
-					TT.PrintSeperator();
+					TT.PrintSeparator();
 					Console.WriteLine("Contents:\n" + SR.ReadLine());
-					TT.PrintSeperator();
+					TT.PrintSeparator();
                     SR.Close();     
 				}
 				catch (Exception ex)
@@ -53,9 +54,9 @@ namespace yacte
 			{
 				Console.WriteLine("What do you want to write?");
 				fileContent += Console.ReadLine();
-				TT.PrintSeperator();
+				TT.PrintSeparator();
 				Console.WriteLine("New content:\n\n" + fileContent);
-				TT.PrintSeperator();
+				TT.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
 				//TODO: Null-checks
 				string choice = Console.ReadLine().ToUpper();
