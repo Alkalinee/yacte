@@ -34,9 +34,7 @@ namespace yacte
 		public void PrintSeparator()
 		{
 			for(int i = 0; i < CONSOLE_WIDTH; i++)
-			{
 				Console.Write("-");
-			}
 		}
 	}
 }
