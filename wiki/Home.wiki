@@ -1,13 +1,15 @@
 #summary Yacte Wiki homepage.
+#TODO: Add more stuff
 
-= Introduction =
+= YACTE Wiki =
 
-Add your content here.
+Coming soon...
 
 
-= Details =
+== Getting YACTE ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+# Download the source from [[svn://yacte.googlecode.com/svn/trunk/|the SVN repo]] using an SVN client of your choice. If you are new to SVN, [[http://tortoisesvn.tigris.org/|TortoiseSVN]] is a nice app with a GUI and right-click context menu in the explorer.
+# After you have downloaded the source, open the sln solution file in Visual Studio 2010 and compile. (Untested in earlier VS versions)
+# Play around with it, keep in mind that it is far from finished.
+# ?????
+# Profit
