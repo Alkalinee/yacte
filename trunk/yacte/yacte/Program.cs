@@ -60,7 +60,7 @@ namespace yacte
 				TT.PrintSeparator();
 				Console.WriteLine("Do you want to save this? (Y/n)");
                 string choice = Console.ReadLine();
-                if (choice == "" || choice.ToUpper() == "Y")
+                if (choice == "" || choice == "Y" || choice == "y")
 				{
 					try
 					{
