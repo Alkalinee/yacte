@@ -78,6 +78,7 @@ namespace yacte
 						break;
 					case _LIST:
 						//TODO: List commands here
+						Console.WriteLine("Command listing coming soon!");
 						break;
 					default:
 						//TODO: Print a list of commands
