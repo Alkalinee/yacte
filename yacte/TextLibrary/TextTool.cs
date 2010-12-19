@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace yacte
+namespace TextLibrary
 {
 	/// <summary>
 	/// Provides various methods to manipulate text.
 	/// </summary>
-	class TextTool
+	public class TextTool
 	{
 		/// <summary>
 		/// The width of the console (the number of "columns")

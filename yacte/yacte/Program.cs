@@ -1,4 +1,5 @@
 ﻿using System;
+using TextLibrary;
 
 namespace yacte
 {
@@ -7,7 +8,6 @@ namespace yacte
 		#region Constants
 		//Constants here, in UPPERCASE
 		private const string _AUTHORS = "Fuskare01 and Vijfhoek";
-		private const double _VERSION = 0.10;
 		private const string _TITLE = "YACTE - Yet Another Console Text Editor";
 		#endregion
 
@@ -16,10 +16,11 @@ namespace yacte
 			var tt = new TextTool();
 			var comSys = new CommandSystem(args);
 
-			Console.Title = _TITLE;
+			string _VERSION = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+			Console.Title = _TITLE + " | Version: " + _VERSION;
 
 			tt.PrintLogo();
-
 			Console.WriteLine("Welcome to YACTE! For a list of commands, type :l");
 
 			while (true)
