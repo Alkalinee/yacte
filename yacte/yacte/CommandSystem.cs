@@ -17,6 +17,7 @@ namespace yacte
 		private const string _SAVE = "s";
 		private const string _REPLACE = "r";
 		private const string _LIST = "l";
+		private const string _SAVEQUIT = "x";
 		#endregion
 
 		private string fileName;
@@ -56,6 +57,12 @@ namespace yacte
 							textFile.SaveFile(fileName.Trim(), false);
 						else
 							Console.WriteLine("Error: No file is open, please open a file with \":o <fileName>\" before saving.");
+						break;
+					case _SAVEQUIT:
+						if (!string.IsNullOrEmpty(fileName))
+							textFile.SaveFile(fileName.Trim, false);
+						Console.WriteLine("kthxbai");
+						Environment.Exit(0);
 						break;
 					case _REPLACE:
 						//TODO: Add replace code here
