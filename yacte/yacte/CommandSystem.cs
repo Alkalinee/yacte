@@ -50,7 +50,7 @@ namespace yacte
 				switch (command)
 				{
 					case _QUIT:
-						if (textFile.IsModified(fileName))
+						if (textFile.IsModified(fileName) && string.IsNullOrEmpty(args))
 						{
 							Console.WriteLine("File has been modified, do you want to save? (Y/n)");
 							string choice;
@@ -64,8 +64,11 @@ namespace yacte
 							if (choice == "" || choice == "Y")
 								textFile.SaveFile(fileName.Trim(), false);
 						}
-						Console.WriteLine("kthxbai");
-						Environment.Exit(0);
+						else
+						{
+							Console.WriteLine("kthxbai");
+							Environment.Exit(0);
+						}
 						break;
 					case _SAVE:
 						if (!string.IsNullOrEmpty(fileName))
