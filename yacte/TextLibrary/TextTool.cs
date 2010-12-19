@@ -19,6 +19,9 @@ namespace TextLibrary
 		private readonly int CONSOLE_HEIGHT = Console.WindowHeight;
 		 */
 
+		/// <summary>
+		/// Prints the logo for YACTE (in ASCII style)
+		/// </summary>
 		public void PrintLogo()
 		{
 			const int logoWidth = 51;
