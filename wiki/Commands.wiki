@@ -1,0 +1,13 @@
+#summary A list of commands
+#sidebar TOC
+
+= Commands =
+
+Here's a list of commands you can currently use.
+
+|| Command             || Description                         ||
+|| :q                  || Quits the editor                    ||
+|| :o [file]           || Opens [file]                        ||
+|| :s                  || Saves content to file               ||
+|| :r [find] [replace] || Replace [find] with [replace] (NYI) ||
+|| :l                  || List commands (NYI)                 ||

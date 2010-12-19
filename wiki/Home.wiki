@@ -1,14 +1,6 @@
 #summary Yacte Wiki homepage.
+#sidebar TOC
 
 = YACTE Wiki =
 
 Coming soon...
-
-
-== Getting YACTE ==
-
-  # Download the source from [http://yacte.googlecode.com/svn/trunk/ the SVN repo] using an SVN client of your choice. If you are new to SVN, [http://tortoisesvn.tigris.org/ TortoiseSVN] is a nice app with a GUI and right-click context menu in the explorer.
-  # After you have downloaded the source, open the sln solution file in Visual Studio 2010 and compile. (Untested in earlier VS versions)
-  # Play around with it, keep in mind that it is far from finished.
-  # ?????
-  # Profit
