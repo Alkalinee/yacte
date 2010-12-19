@@ -87,6 +87,12 @@ namespace yacte
 			}
 		}
 
+		public bool IsModified(string fileName)
+		{
+			string fileOldContent = GetFileContent(fileName);
+			return fileContent != fileOldContent;
+		}
+
 		public void WriteContent(string content, bool append)
 		{
 			try
@@ -148,6 +154,27 @@ namespace yacte
 			catch (Exception ex)
 			{
 				Console.WriteLine("Error when reading file: " + ex.Message + "\n==" + ex.Source + "==");
+			}
+		}
+
+		public string GetFileContent(string fileName)
+		{
+			if (IsWriting)
+			{
+				Console.WriteLine("File is open for writing, please close it before reading.");
+				return null;
+			}
+			try
+			{
+				LoadFile(false, fileName, true);
+				string content = _fileRead.ReadToEnd();
+				CloseFile();
+				return content;
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Error when reading file: " + ex.Message + "\n==" + ex.Source + "==");
+				return null;
 			}
 		}
 
