@@ -60,7 +60,7 @@ namespace yacte
 						break;
 					case _SAVEQUIT:
 						if (!string.IsNullOrEmpty(fileName))
-							textFile.SaveFile(fileName.Trim, false);
+							textFile.SaveFile(fileName.Trim(), false);
 						Console.WriteLine("kthxbai");
 						Environment.Exit(0);
 						break;
