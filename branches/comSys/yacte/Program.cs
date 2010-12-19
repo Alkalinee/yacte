@@ -26,11 +26,42 @@ namespace yacte
 
 			tt.PrintLogo();
 
+			Console.WriteLine("Welcome to YACTE! For a list of commands, type :c");
+
 			int numArgs = args.Length;
-			string fileName;
+			string fileName = "";
+			if (numArgs > 0)
+				if (!string.IsNullOrEmpty(args[0]))
+					fileName = args[0];
 			string fileContent = "";
 			string oldFileContent = "";
-			bool loopMenu = true;
+			//bool loopMenu = true;
+			while (true)
+			{
+				Console.Write("> ");
+				string line = Console.ReadLine();
+				Console.WriteLine();
+				if (comSys.IsCommand(line))
+				{
+					comSys.HandleCommand(line);
+				}
+				else
+				{
+					if (!string.IsNullOrEmpty(line))
+					{
+						//Handle writing to file here
+						if (string.IsNullOrEmpty(fileName))
+						{
+							Console.WriteLine("Please open a file first. (:o <fileName>)");
+						}
+						else
+						{
+							var sw = new StreamWriter(fileName);
+						}
+					}
+				}
+			}
+			/*
 			if (numArgs <= 0)
 			{
 				do
@@ -103,6 +134,7 @@ namespace yacte
 						loopMenu = false;
 				}
 			} while (loopMenu);
+			*/
 		}
 	}
 }
