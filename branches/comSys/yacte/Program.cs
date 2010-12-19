@@ -4,7 +4,6 @@
  */
 
 using System;
-using System.IO;
 
 namespace yacte
 {
@@ -20,121 +19,24 @@ namespace yacte
 		static void Main(string[] args)
 		{
 			var tt = new TextTool();
-			var comSys = new CommandSystem();
+			var comSys = new CommandSystem(args);
 
 			Console.Title = _TITLE;
 
 			tt.PrintLogo();
 
-			Console.WriteLine("Welcome to YACTE! For a list of commands, type :c");
+			Console.WriteLine("Welcome to YACTE! For a list of commands, type :l");
 
-			int numArgs = args.Length;
-			string fileName = "";
-			if (numArgs > 0)
-				if (!string.IsNullOrEmpty(args[0]))
-					fileName = args[0];
-			string fileContent = "";
-			string oldFileContent = "";
+			//string fileContent = "";
+			//string oldFileContent = "";
 			//bool loopMenu = true;
 			while (true)
 			{
 				Console.Write("> ");
 				string line = Console.ReadLine();
 				Console.WriteLine();
-				if (comSys.IsCommand(line))
-				{
-					comSys.HandleCommand(line);
-				}
-				else
-				{
-					if (!string.IsNullOrEmpty(line))
-					{
-						//Handle writing to file here
-						if (string.IsNullOrEmpty(fileName))
-						{
-							Console.WriteLine("Please open a file first. (:o <fileName>)");
-						}
-						else
-						{
-							var sw = new StreamWriter(fileName);
-						}
-					}
-				}
+				comSys.HandleInput(line);
 			}
-			/*
-			if (numArgs <= 0)
-			{
-				do
-				{
-					Console.Write("Please specify a file (relative to the exe dir): ");
-					fileName = Console.ReadLine();
-					if (!string.IsNullOrEmpty(fileName))
-						fileName = fileName.Trim();
-				} while (string.IsNullOrEmpty(fileName));
-			}
-			else
-			{
-				fileName = args[1]; //We assume the filename is the first argument.
-			}
-			Console.WriteLine("File: " + fileName);
-			TextReader sr;
-			if (File.Exists(fileName))
-			{
-				try
-				{
-					sr = new StreamReader(fileName);
-					tt.PrintSeparator();
-					oldFileContent = sr.ReadToEnd();
-					Console.WriteLine("Contents:\n" + oldFileContent);
-					tt.PrintSeparator();
-					sr.Close();     
-				}
-				catch (Exception ex)
-				{
-					Console.WriteLine("Error reading file, exception: " + ex.Message + "\n==" + ex.Source + "==");
-				}
-			}
-			else
-			{
-				Console.WriteLine("File does not exist, file will be created when you save.");
-			}
-			TextWriter sw;
-			do
-			{
-				Console.WriteLine("What do you want to write?");
-				fileContent += Console.ReadLine();
-				tt.PrintSeparator();
-				Console.WriteLine("New content:\n\n" + oldFileContent + fileContent);
-				tt.PrintSeparator();
-				Console.WriteLine("Do you want to save this? (Y/n)");
-				string choice = Console.ReadLine();
-				choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
-				if (choice == "" || choice == "Y")
-				{
-					try
-					{
-						Console.WriteLine("Do you want to overwrite the current file? (y/N)");
-						string owChoice = Console.ReadLine();
-						owChoice = !string.IsNullOrEmpty(owChoice) ? owChoice.ToUpper() : "N";
-						bool append = owChoice.Equals("N");
-						sw = new StreamWriter(fileName, append);
-						sw.WriteLine(fileContent);
-						sw.Flush();
-						sw.Close();
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine("Error writing to file, exception:\n" + ex.Message + "\n==" + ex.Source + "==");
-					}
-					Console.WriteLine("Successfully wrote to file!");
-					Console.WriteLine("Do you want to exit? (y/N)");
-					choice = Console.ReadLine();
-					choice = !string.IsNullOrEmpty(choice) ? choice.ToUpper() : "";
-					if (choice == "Y")
-						loopMenu = false;
-				}
-			} while (loopMenu);
-			*/
 		}
 	}
 }
