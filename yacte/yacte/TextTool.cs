@@ -19,6 +19,40 @@ namespace yacte
 		private readonly int CONSOLE_HEIGHT = Console.WindowHeight;
 		 */
 
+		public void PrintLogo()
+		{
+			const int logoWidth = 51;
+			int margin = (int)Math.Ceiling((double)(CONSOLE_WIDTH - logoWidth) / 2);
+			var logo = new[]
+			{
+				"Y       Y    A          CCCCC  TTTTTTTTT  EEEEEEE",
+				" Y     Y    A A        C           T      E      ",
+				"  Y   Y    A   A      C            T      E      ",
+				"   Y Y    A     A    C             T      EEEE   ",
+				"    Y    AAAAAAAAA    C            T      E      ",
+				"    Y   A         A    C           T      E      ",
+				"    Y  A           A    CCCCC      T      EEEEEEE",
+				"---------Yet Another Console Text Editor---------"
+			};
+			Console.WriteLine();
+			for (int n = 0; n < 8; n++)
+			{
+				char spacer = (n == 7) ? '-' : ' ';
+
+				for (int i = 0; i < margin; i++)
+				{
+					Console.Write(spacer);
+				}
+				Console.Write(logo[n]);
+				for (int i = 0; i < margin; i++)
+				{
+					Console.Write(spacer);
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine();
+		}
+
 		/// <summary>
 		/// Prints a horizontal line.
 		/// </summary>
