@@ -9,13 +9,15 @@ namespace yacte
 		readonly TextFile textFile = new TextFile();
 		readonly TextTool tt = new TextTool();
 
+		#region Constants
+		//Constants here in UPPERCASE
 		private const char _PREFIX = ':';
-
 		private const string _QUIT = "q";
 		private const string _OPEN = "o";
 		private const string _SAVE = "s";
 		private const string _REPLACE = "r";
 		private const string _LIST = "l";
+		#endregion
 
 		private string fileName;
 
