@@ -12,6 +12,7 @@ namespace yacte
 		#region Constants
 		//Constants here in UPPERCASE
 		private const char _PREFIX = ':';
+		private const char _ESCAPE = '\\';
 		private const string _QUIT = "q";
 		private const string _OPEN = "o";
 		private const string _SAVE = "s";
@@ -100,6 +101,8 @@ namespace yacte
 			{
 				if (!string.IsNullOrEmpty(fileName))
 				{
+					if (line.StartsWith(_ESCAPE.ToString()))
+						line = line.TrimStart(_ESCAPE);
 					textFile.WriteContent(line, true);
 					tt.PrintSeparator();
 					textFile.ReadContent();
