@@ -23,7 +23,9 @@ namespace yacte
 			tt.PrintLogo();
 			Console.WriteLine("Welcome to YACTE! For a list of commands, type :l\n"
 							 +"Commands are preceeded by a colon (:).\n"
-							 +"To add text to a file, simply type something without a colon at the beginning.");
+							 +"To add text to a file, simply type something without a colon at the beginning.\n"
+							 +"If you want to write a colon at the start of the line, escape it with '\\'\n"
+							 +"i.e: \"\\:myLabel\"");
 
 			while (true)
 			{
