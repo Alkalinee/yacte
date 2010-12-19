@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YACTE")]
-[assembly: AssemblyDescription("Yet Another Console Text Editor")]
-[assembly: AssemblyConfiguration("debug")]
-[assembly: AssemblyCompany("F16Gaming")]
-[assembly: AssemblyProduct("yacte")]
-[assembly: AssemblyCopyright("Copyright © 2010 by Fuskare01 and Vijfhoek")]
+[assembly: AssemblyTitle("TextLibrary")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("TextLibrary")]
+[assembly: AssemblyCopyright("Copyright ©  2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("eeb40081-8bf0-4a18-8561-714cd1583937")]
+[assembly: Guid("f03ce53b-f293-48dc-9463-dd20d0d0b0de")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

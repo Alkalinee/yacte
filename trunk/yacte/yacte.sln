@@ -3,26 +3,50 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yacte", "yacte\yacte.csproj", "{C6D48622-5AED-4F78-A9A7-C60F11216398}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextLibrary", "TextLibrary\TextLibrary.csproj", "{DC52078F-2E41-4D9A-A050-240D756B16B7}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
 		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|Mixed Platforms.Build.0 = Debug|x64
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|x64.ActiveCfg = Debug|x64
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|x64.Build.0 = Debug|x64
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|x86.ActiveCfg = Debug|x86
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Debug|x86.Build.0 = Debug|x86
+		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|Any CPU.ActiveCfg = Release|x64
+		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|Mixed Platforms.Build.0 = Release|x64
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|x64.ActiveCfg = Release|x64
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|x64.Build.0 = Release|x64
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|x86.ActiveCfg = Release|x86
 		{C6D48622-5AED-4F78-A9A7-C60F11216398}.Release|x86.Build.0 = Release|x86
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Release|x64.ActiveCfg = Release|Any CPU
+		{DC52078F-2E41-4D9A-A050-240D756B16B7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

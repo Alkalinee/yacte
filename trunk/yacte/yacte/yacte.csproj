@@ -68,7 +68,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextFile.cs" />
-    <Compile Include="TextTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextLibrary\TextLibrary.csproj">
+      <Project>{DC52078F-2E41-4D9A-A050-240D756B16B7}</Project>
+      <Name>TextLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
