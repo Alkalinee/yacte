@@ -19,6 +19,8 @@ namespace yacte
 
 			Console.Title = _TITLE;
 
+			tt.PrintLogo();
+
 			int numArgs = args.Length;
 			string fileName;
 			string fileContent = "";
