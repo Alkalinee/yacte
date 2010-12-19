@@ -35,9 +35,12 @@ namespace yacte
 				"---------Yet Another Console Text Editor---------"
 			};
 			Console.WriteLine();
-			for (int n = 0; n < 8; n++)
+			for (int n = 0; n <= 7; n++)
 			{
 				char spacer = (n == 7) ? '-' : ' ';
+
+				if (n == 7)
+					Console.WriteLine();
 
 				for (int i = 0; i < margin; i++)
 				{
