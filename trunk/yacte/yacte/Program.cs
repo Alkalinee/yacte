@@ -21,7 +21,9 @@ namespace yacte
 			Console.Title = _TITLE + " | Version: " + _VERSION;
 
 			tt.PrintLogo();
-			Console.WriteLine("Welcome to YACTE! For a list of commands, type :l");
+			Console.WriteLine("Welcome to YACTE! For a list of commands, type :l\n"
+							 +"Commands are preceeded by a colon (:).\n"
+							 +"To add text to a file, simply type something without a colon at the beginning.");
 
 			while (true)
 			{
