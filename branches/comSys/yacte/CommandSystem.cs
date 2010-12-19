@@ -15,6 +15,7 @@ namespace yacte
 		private const string _OPEN = "o";
 		private const string _SAVE = "s";
 		private const string _REPLACE = "r";
+		private const string _LIST = "l";
 
 		private string fileName;
 
@@ -75,6 +76,9 @@ namespace yacte
 						{
 							Console.WriteLine("Error: No filename specified.");
 						}
+						break;
+					case _LIST:
+						//TODO: List commands here
 						break;
 					default:
 						//TODO: Print a list of commands
