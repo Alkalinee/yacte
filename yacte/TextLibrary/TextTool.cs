@@ -24,26 +24,27 @@ namespace TextLibrary
 		/// </summary>
 		public void PrintLogo()
 		{
-			const int logoWidth = 51;
-			int margin = (int)Math.Ceiling((double)(CONSOLE_WIDTH - logoWidth) / 2);
 			var logo = new[]
 			{
-				"Y       Y    A          CCCCC  TTTTTTTTT  EEEEEEE",
-				" Y     Y    A A        C           T      E      ",
-				"  Y   Y    A   A      C            T      E      ",
-				"   Y Y    A     A    C             T      EEEE   ",
-				"    Y    AAAAAAAAA    C            T      E      ",
-				"    Y   A         A    C           T      E      ",
-				"    Y  A           A    CCCCC      T      EEEEEEE",
-				"---------Yet Another Console Text Editor---------"
+				//Length of logo: 51
+				"Y       Y    A          CCCCC  TTTTTTTTT  EEEEEEE", // 1
+				" Y     Y    A A        C           T      E      ", // 2
+				"  Y   Y    A   A      C            T      E      ", // 3
+				"   Y Y    A     A    C             T      EEEE   ", // 3
+				"    Y    AAAAAAAAA    C            T      E      ", // 4
+				"    Y   A         A    C           T      E      ", // 5
+				"    Y  A           A    CCCCC      T      EEEEEEE", // 6
+				"---------Yet Another Console Text Editor---------"  // 7
 			};
+			int logoRows = logo.Length - 1;
+			int margin = (int)Math.Ceiling((double)(CONSOLE_WIDTH - logo[1].Length) / 2);
 			Console.WriteLine();
 			Color.Set(Color.Cyan);
-			for (int n = 0; n <= 7; n++)
+			for (int n = 0; n <= logoRows; n++)
 			{
-				char spacer = (n == 7) ? '-' : ' ';
+				char spacer = (n == logoRows) ? '-' : ' ';
 
-				if (n == 7)
+				if (n == logoRows)
 					Console.WriteLine();
 
 				for (int i = 0; i < margin; i++)
