@@ -38,6 +38,7 @@ namespace TextLibrary
 				"---------Yet Another Console Text Editor---------"
 			};
 			Console.WriteLine();
+			Color.Set(Color.Cyan);
 			for (int n = 0; n <= 7; n++)
 			{
 				char spacer = (n == 7) ? '-' : ' ';
@@ -56,6 +57,7 @@ namespace TextLibrary
 				}
 				Console.WriteLine();
 			}
+			Color.Reset();
 			Console.WriteLine();
 		}
 
