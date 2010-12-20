@@ -89,6 +89,8 @@ namespace yacte
 
 		public bool IsModified(string fileName)
 		{
+			if (string.IsNullOrEmpty(fileName))
+				return false;
 			string fileOldContent = GetFileContent(fileName);
 			return fileContent != fileOldContent;
 		}
