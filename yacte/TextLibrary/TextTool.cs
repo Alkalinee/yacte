@@ -37,7 +37,8 @@ namespace TextLibrary
 				"---------Yet Another Console Text Editor---------"  // 7
 			};
 			int logoRows = logo.Length - 1;
-			int margin = (int)Math.Ceiling((double)(CONSOLE_WIDTH - logo[1].Length) / 2);
+			const int logoLength = 51; //logo[1].length; returns faulty number
+			int margin = (int)Math.Ceiling((double)(CONSOLE_WIDTH - logoLength) / 2);
 			Console.WriteLine();
 			Color.Set(Color.Cyan);
 			for (int n = 0; n <= logoRows; n++)
