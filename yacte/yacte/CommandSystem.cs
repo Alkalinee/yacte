@@ -52,7 +52,7 @@ namespace yacte
 					case _QUIT:
 						if (textFile.IsModified(fileName) && string.IsNullOrEmpty(args) && !string.IsNullOrEmpty(fileName))
 						{
-							Console.WriteLine("File has been modified, do you want to save? (Y/n)");
+							Message.Notify("File has been modified, do you want to save? (Y/n)");
 							string choice;
 							do
 							{
@@ -64,11 +64,7 @@ namespace yacte
 							if (choice == "" || choice == "Y")
 								textFile.SaveFile(fileName.Trim(), false);
 						}
-						else
-						{
-							Console.WriteLine("kthxbai");
-							Environment.Exit(0);
-						}
+						Quit();
 						break;
 					case _SAVE:
 						if (!string.IsNullOrEmpty(fileName))
@@ -79,8 +75,7 @@ namespace yacte
 					case _SAVEQUIT:
 						if (!string.IsNullOrEmpty(fileName))
 							textFile.SaveFile(fileName.Trim(), false);
-						Console.WriteLine("kthxbai");
-						Environment.Exit(0);
+						Quit();
 						break;
 					case _REPLACE:
 						//TODO: Add replace code here
@@ -96,7 +91,7 @@ namespace yacte
 							}
 							else
 							{
-								Console.WriteLine("File \"" + fileName + "\" does not exist. It will be created when you save.");
+								Message.Notify("File \"" + fileName + "\" does not exist. It will be created when you save.");
 							}
 						}
 						else
@@ -130,6 +125,12 @@ namespace yacte
 					Console.WriteLine("Please open a file with \":o <fileName>\" before trying to write.");
 				}
 			}
+		}
+
+		private static void Quit()
+		{
+			Console.WriteLine("kthxbai");
+			Environment.Exit(0);
 		}
 	}
 }

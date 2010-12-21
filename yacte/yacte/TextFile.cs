@@ -47,7 +47,7 @@ namespace yacte
 			}
 			catch(Exception ex)
 			{
-				Console.WriteLine("Error opening file: " + ex.Message + "\n==" + ex.Source + "==");
+				Message.Exception(ex, "Exception occurred when opening file.");
 			}
 		}
 
@@ -78,12 +78,10 @@ namespace yacte
 					return;
 				}
 				Console.WriteLine("No files open.");
-				return;
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error closing file: " + ex.Message + "\n==" + ex.Source + "==");
-				return;
+				Message.Exception(ex, "Exception occured when closing file.");
 			}
 		}
 
@@ -107,7 +105,7 @@ namespace yacte
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error adding text: " + ex.Message + "\n==" + ex.Source + "==");
+				Message.Exception(ex, "Exception occurred when adding text.");
 			}
 		}
 
@@ -127,7 +125,7 @@ namespace yacte
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error writing to file: " + ex.Message + "\n==" + ex.Source + "==");
+				Message.Exception(ex, "Exception occurred when writing to file.");
 			}
 		}
 
@@ -155,7 +153,7 @@ namespace yacte
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error when reading file: " + ex.Message + "\n==" + ex.Source + "==");
+				Message.Exception(ex, "Exception occurred when reading file.");
 			}
 		}
 
@@ -175,7 +173,7 @@ namespace yacte
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error when reading file: " + ex.Message + "\n==" + ex.Source + "==");
+				Message.Exception(ex, "Exception occurred when reading file.");
 				return null;
 			}
 		}
