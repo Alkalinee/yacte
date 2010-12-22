@@ -44,6 +44,11 @@ namespace yacte
 			if (IsCommand(line))
 			{
 				line = line.TrimStart(_PREFIX);
+				if (string.IsNullOrEmpty(line))
+				{
+					Console.WriteLine("Please enter a valid command, to see a list of available commands, type \":l\"");
+					return;
+				}
 				string args = line.Substring(1);
 				string command = line.Substring(0, 1);
 
