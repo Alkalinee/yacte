@@ -50,7 +50,7 @@ namespace yacte
 					return;
 				}
 				string args = line.Substring(1);
-				string command = line.Substring(0, 1);
+				string command = line.Substring(0, 1).ToLower();
 
 				switch (command)
 				{
