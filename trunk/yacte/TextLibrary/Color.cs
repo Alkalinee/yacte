@@ -50,6 +50,9 @@ namespace TextLibrary
 			Console.BackgroundColor = backGround;
 		}
 
+		/// <summary>
+		/// Resets colors to default.
+		/// </summary>
 		public static void Reset()
 		{
 			Console.ResetColor();
