@@ -126,7 +126,7 @@ namespace TextLibrary
 				}
 				catch (Exception ex)
 				{
-					Console.WriteLine("Error replacing text, exception: " + ex.Message + "\n==" + ex.Source + "==");
+					Message.Exception(ex, "Error when replacing text.");
 				}
 			}
 			return null;
