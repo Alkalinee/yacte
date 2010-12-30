@@ -143,7 +143,7 @@ namespace yacte
 			}
 			try
 			{
-				TextTool tt = new TextTool();
+				var tt = new TextTool();
 				LoadFile(false, fileName, true);
 				fileContent = _fileRead.ReadToEnd();
 				CloseFile();

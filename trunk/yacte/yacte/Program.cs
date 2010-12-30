@@ -7,7 +7,7 @@ namespace yacte
 	{
 		#region Constants
 		//Constants here, in UPPERCASE
-		private const string _AUTHORS = "Fuskare01 and Vijfhoek";
+		//private const string _AUTHORS = "Fuskare01 and Vijfhoek";
 		private const string _TITLE = "YACTE - Yet Another Console Text Editor";
 		#endregion
 
@@ -16,9 +16,9 @@ namespace yacte
 			var tt = new TextTool();
 			var comSys = new CommandSystem(args);
 
-			string _VERSION = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+			string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-			Console.Title = _TITLE + " | Version: " + _VERSION;
+			Console.Title = _TITLE + " | Version: " + version;
 
 			tt.PrintLogo();
 			Console.WriteLine("Welcome to YACTE! For a list of commands, type :l\n"
@@ -34,6 +34,8 @@ namespace yacte
 				Console.WriteLine();
 				comSys.HandleInput(line);
 			}
+		// ReSharper disable FunctionNeverReturns
 		}
+		// ReSharper restore FunctionNeverReturns
 	}
 }
