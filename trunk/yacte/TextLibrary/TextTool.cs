@@ -12,13 +12,6 @@ namespace TextLibrary
 		/// </summary>
 		private readonly int CONSOLE_WIDTH = Console.WindowWidth;
 
-		/*This is never used, commented.
-		/// <summary>
-		/// The height of the console (the number of "rows")
-		/// </summary>
-		private readonly int CONSOLE_HEIGHT = Console.WindowHeight;
-		 */
-
 		/// <summary>
 		/// Prints the logo for YACTE (in ASCII style)
 		/// </summary>
