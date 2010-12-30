@@ -10,6 +10,10 @@ namespace TextLibrary
 		private const ConsoleColor ErrorColor = Color.Red;
 		#endregion
 
+		/// <summary>
+		/// Send a notify message to the user (displayed in cyan).
+		/// </summary>
+		/// <param name="message">The message to send.</param>
 		public static void Notify(string message)
 		{
 			Color.Set(NotifyColor);
@@ -17,6 +21,10 @@ namespace TextLibrary
 			Color.Reset();
 		}
 
+		/// <summary>
+		/// Send a warning message to the user (displayed in yellow and prefixed with "Warning: ").
+		/// </summary>
+		/// <param name="message">The message to send.</param>
 		public static void Warning(string message)
 		{
 			Color.Set(WarningColor);
@@ -24,6 +32,10 @@ namespace TextLibrary
 			Color.Reset();
 		}
 
+		/// <summary>
+		/// Send an error message to the user (displayed in red and prefixed with "Error: ").
+		/// </summary>
+		/// <param name="message">The message to send.</param>
 		public static void Error(string message)
 		{
 			Color.Set(ErrorColor);
@@ -31,11 +43,20 @@ namespace TextLibrary
 			Color.Reset();
 		}
 
+		/// <summary>
+		/// Print exception info.
+		/// </summary>
+		/// <param name="ex">The exception to use.</param>
 		public static void Exception(Exception ex)
 		{
 			Exception(ex, null);
 		}
 
+		/// <summary>
+		/// Print exception info.
+		/// </summary>
+		/// <param name="ex">The exception to use.</param>
+		/// <param name="message">Additional info to display.</param>
 		public static void Exception(Exception ex, string message)
 		{
 			var tt = new TextTool();

@@ -10,7 +10,7 @@ namespace TextLibrary
 
 		#region Color Constants
 		//DO NOT MODIFY
-		private const ConsoleColor _FOREGROUND = ConsoleColor.Gray;
+		//private const ConsoleColor _FOREGROUND = ConsoleColor.Gray;
 		private const ConsoleColor _BACKGROUND = ConsoleColor.Black;
 		public const ConsoleColor Black = ConsoleColor.Black;
 		public const ConsoleColor DarkBlue = ConsoleColor.DarkBlue;

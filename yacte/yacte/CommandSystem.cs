@@ -6,8 +6,8 @@ namespace yacte
 {
 	class CommandSystem
 	{
-		readonly TextFile textFile = new TextFile();
-		readonly TextTool tt = new TextTool();
+		private readonly TextFile textFile = new TextFile();
+		private readonly TextTool tt = new TextTool();
 
 		#region Constants
 		//Constants here in UPPERCASE
@@ -109,8 +109,8 @@ namespace yacte
 						Console.WriteLine("Command listing coming soon!");
 						break;
 					default:
-						//TODO: Print a list of commands
 						Console.WriteLine("Invalid command: \"" + command + "\"");
+						Console.WriteLine("Type ':l' for a listing of commands.");
 						break;
 				}
 			}
