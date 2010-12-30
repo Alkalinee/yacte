@@ -132,10 +132,10 @@ namespace yacte
 			}
 		}
 
-		private static void Quit()
+		private static void Quit(int eCode = 0)
 		{
 			Console.WriteLine("kthxbai");
-			Environment.Exit(0);
+			Environment.Exit(eCode);
 		}
 	}
 }
