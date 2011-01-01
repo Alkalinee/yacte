@@ -29,7 +29,13 @@ namespace yacte
 			fileName = "";
 			if (numArgs > 0)
 				if (!string.IsNullOrEmpty(clArgs[0]))
-					fileName = clArgs[0];
+				{
+					/* TODO: 
+					 * The replace is a temporary fix for the "Directory does not exist" error.
+					 * It's a placeholder and should be replaced with actual fix ASAP.
+					 */
+					fileName = clArgs[0].Replace("\\", string.Empty);
+				}
 		}
 
 		public bool IsCommand(string line)
@@ -49,7 +55,11 @@ namespace yacte
 					Console.WriteLine("Please enter a valid command, to see a list of available commands, type \":l\"");
 					return;
 				}
-				string args = line.Substring(1);
+				/* TODO:
+				 * The replace is a temporary fix for the "Directory does not exist" error.
+				 * It's a placeholder and should be replaced with actual fix ASAP.
+				 */
+				string args = line.Substring(1).Replace("\\", string.Empty);
 				string command = line.Substring(0, 1).ToLower();
 
 				switch (command)
